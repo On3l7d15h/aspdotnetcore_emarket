@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMarket", "EMarket\EMarket.csproj", "{AE746359-F14B-4E4F-8459-DDE7C5811B56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{94A9CDE4-AE39-4E72-A78B-9195E204E22A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FAE6677C-E3E0-4554-B6F9-CC6E0836F155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{55E58F82-03BD-4D21-83E2-1EB39C3E7369}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A51120C9-32D5-477C-A961-B52FD42F5876}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{B9C7D23E-43CD-40EE-A539-3C5B1D97DF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionEMarket.Core.Application", "SolutionEMarket.Core.Application\SolutionEMarket.Core.Application.csproj", "{F77D1958-7C84-4514-8B3B-D85CA2168F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionEMarket.Core.Domain", "SolutionEMarket.Core.Domain\SolutionEMarket.Core.Domain.csproj", "{0977CD3D-9E24-4C80-A030-AB06D0E7C183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionEMarket.Infrastructure.Persistence", "SolutionEMarket.Infrastructure.Persistence\SolutionEMarket.Infrastructure.Persistence.csproj", "{86D58C7C-2C68-49A1-B765-00E2AA6B59F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE746359-F14B-4E4F-8459-DDE7C5811B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE746359-F14B-4E4F-8459-DDE7C5811B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE746359-F14B-4E4F-8459-DDE7C5811B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE746359-F14B-4E4F-8459-DDE7C5811B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F77D1958-7C84-4514-8B3B-D85CA2168F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F77D1958-7C84-4514-8B3B-D85CA2168F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F77D1958-7C84-4514-8B3B-D85CA2168F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F77D1958-7C84-4514-8B3B-D85CA2168F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0977CD3D-9E24-4C80-A030-AB06D0E7C183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0977CD3D-9E24-4C80-A030-AB06D0E7C183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0977CD3D-9E24-4C80-A030-AB06D0E7C183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0977CD3D-9E24-4C80-A030-AB06D0E7C183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D58C7C-2C68-49A1-B765-00E2AA6B59F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D58C7C-2C68-49A1-B765-00E2AA6B59F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D58C7C-2C68-49A1-B765-00E2AA6B59F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D58C7C-2C68-49A1-B765-00E2AA6B59F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AE746359-F14B-4E4F-8459-DDE7C5811B56} = {B9C7D23E-43CD-40EE-A539-3C5B1D97DF33}
+		{FAE6677C-E3E0-4554-B6F9-CC6E0836F155} = {94A9CDE4-AE39-4E72-A78B-9195E204E22A}
+		{55E58F82-03BD-4D21-83E2-1EB39C3E7369} = {94A9CDE4-AE39-4E72-A78B-9195E204E22A}
+		{A51120C9-32D5-477C-A961-B52FD42F5876} = {94A9CDE4-AE39-4E72-A78B-9195E204E22A}
+		{B9C7D23E-43CD-40EE-A539-3C5B1D97DF33} = {A51120C9-32D5-477C-A961-B52FD42F5876}
+		{F77D1958-7C84-4514-8B3B-D85CA2168F2C} = {FAE6677C-E3E0-4554-B6F9-CC6E0836F155}
+		{0977CD3D-9E24-4C80-A030-AB06D0E7C183} = {FAE6677C-E3E0-4554-B6F9-CC6E0836F155}
+		{86D58C7C-2C68-49A1-B765-00E2AA6B59F4} = {55E58F82-03BD-4D21-83E2-1EB39C3E7369}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09CE1E82-78C1-46D1-863A-2E1C74ECAB77}
+	EndGlobalSection
+EndGlobal

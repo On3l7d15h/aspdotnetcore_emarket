@@ -1,0 +1,104 @@
+﻿@*Strong Typed*@
+@using SolutionEMarket.Core.Application.ViewModels.Product;
+@using SolutionEMarket.Core.Application.ViewModels.Category;
+@model List<ProductViewModel>
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<section class="w-[60rem] mx-auto flex flex-row justify-center items-center relative top-[1rem] mt-[0.150rem]">
+        <div class="text-white h-auto flex flex-row justify-center items-center gap-2">
+            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                <path d="M.5.5l.6 2m0 0l2.4 8h11v-6a2 2 0 00-2-2H1.1zm11.4 12a1 1 0 110-2 1 1 0 010 2zm-8-1a1 1 0 112 0 1 1 0 01-2 0z" stroke="currentColor"></path>
+            </svg>
+            <h1 class="text-3xl text-white text-center mb-4 mt-1 font-bold">
+                Products
+            </h1>
+        </div>
+    </section>
+
+<div class="w-[90rem] flex flex-row justify-between items-center mx-auto">
+
+    <div class="w-[20rem] h-[30rem] shadow shadow-white/50 relative top-[2rem] mx-auto bg-white/25 overflow-hidden border-[0.125rem] border-white border-opacity-50 rounded overflow-hidden">
+        <section class="backdrop-blur-sm w-full h-full flex flex-col justify-between items-center overflow-hidden">
+            <h1 class="text-white text-3xl text-center my-2">Filter</h1>
+            <div class="w-full h-full">
+                <form method="post" asp-controller="Home" asp-action="Index" class="w-full h-full flex flex-col justify-between items-center">
+                    <!-- Email section -->
+                    <div class="w-3/4 flex flex-col justify-center items-center my-2 text-left">
+                        <label for="name" class="w-full text-white w-full">ProductName:</label>
+                        <input id="name" value="" name="ProductName" class="w-full text-white p-2 outline-none bg-white/30 rounded" />
+                    </div>
+
+                    <label class="text-white text-left w-3/4">By Categories</label>
+                    <div class="w-3/4 h-full flex flex-wrap flex-col justify-center items-start my-2 text-left overflow-y-scroll gap-2">
+                        <section>
+                            <input id="category-all" value="0" checked name="CategoryId" type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-teal-300 checked:border-teal-300 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" />
+                            <label for="category-all" class="text-white">All</label>
+                        </section>
+
+                        @foreach(CategoryViewModel categoryvm in ViewBag.Categories){
+                           <section>
+                               <input id="category-@categoryvm.Id" value="@categoryvm.Id" name="CategoryId" type="checkbox" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-teal-300 checked:border-teal-300 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" /> 
+                               <label for="category-@categoryvm.Id" class="text-white">@categoryvm.Name</label>
+                           </section>
+                        }
+                    </div>
+
+                    <div class="!w-[100%] flex flex-row mt-5">
+                        <button type="submit" class="w-full py-2 px-3 bg-white/30 text-white hover:bg-white hover:text-teal-500 transition duration-300">
+                            Filter
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="w-[60rem] h-[30rem] shadow shadow-white/50 relative top-[2rem] mx-auto bg-white/25 overflow-hidden border-[0.125rem] border-white border-opacity-50 rounded overflow-hidden">
+    <section class="backdrop-blur-sm w-full h-full flex flex-row justify-between items-center">
+
+        <!-- Title -->
+        <div class="w-[12rem] h-full rounded text-center flex flex-col justify-center items-center text-white">
+        </div>
+
+        <div class="bg-gray-300 w-[47rem] h-full rounded-left p-2 flex flex-row justify-start items-start gap-2">
+             @if (Model.Count() > 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">
+                        <div class="w-[15rem] h-[15.5rem] bg-white/25 border-[0.125rem] border-white border-opacity-50 rounded shadow shadow-white/50">
+                            <section class="backdrop-blur-lg">
+                                <div class="w-full h-[7.5rem]">
+                                    <img src="@item.ImagePath" class="w-full h-full" />
+                                </div>
+                                <section class="flex flex-row justify-between items-center h-[8rem] p-1">
+                                
+                                    <!-- Product Information --> 
+                                    <div class="w-full h-[7rem] text-left flex flex-col justify-start items-center">
+                                        <p class="text-2xl font-bold">@item.Name</p>
+                                        <p class="text-gray-600/80 w-full text-ellipsis overflow-hidden whitespace-nowrap">@item.Description</p>
+                                        <p class="text-gray-600/80 mb-1">$@item.Price</p>
+                                        <p class="rounded bg-teal-400 text-white bg-teal-400/50 backdrop-blur border-2 border-teal-400 border-opacity-20 px-3 shadow-lg shadow-teal-400/50">
+                                            @item.CategoryName
+                                        </p>
+                                    </div>
+                                </section>
+                            </section>
+                        </div>
+                     </a>
+                }
+            }
+            else
+            {
+                <div class="w-full h-full flex flex-row justify-center items-center text-3xl text-white">
+                    No products!
+                </div>
+            }
+        </div>
+
+        </section>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@*Strong Typed*@
+@using SolutionEMarket.Core.Application.ViewModels.Product;
+@model List<ProductViewModel>
+@{
+    ViewData["Title"] = "My Product Page";
+}
+
+<section class="w-[60rem] mx-auto flex flex-row justify-between items-center relative top-[1rem] mt-[0.150rem]">
+    <div class="text-white h-auto flex flex-row justify-center items-center gap-2">
+        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <path d="M3 13v.5h1V13H3zm8 0v.5h1V13h-1zm-7 0v-.5H3v.5h1zm2.5-3h2V9h-2v1zm4.5 2.5v.5h1v-.5h-1zM8.5 10a2.5 2.5 0 012.5 2.5h1A3.5 3.5 0 008.5 9v1zM4 12.5A2.5 2.5 0 016.5 10V9A3.5 3.5 0 003 12.5h1zM7.5 3A2.5 2.5 0 005 5.5h1A1.5 1.5 0 017.5 4V3zM10 5.5A2.5 2.5 0 007.5 3v1A1.5 1.5 0 019 5.5h1zM7.5 8A2.5 2.5 0 0010 5.5H9A1.5 1.5 0 017.5 7v1zm0-1A1.5 1.5 0 016 5.5H5A2.5 2.5 0 007.5 8V7zm0 7A6.5 6.5 0 011 7.5H0A7.5 7.5 0 007.5 15v-1zM14 7.5A6.5 6.5 0 017.5 14v1A7.5 7.5 0 0015 7.5h-1zM7.5 1A6.5 6.5 0 0114 7.5h1A7.5 7.5 0 007.5 0v1zm0-1A7.5 7.5 0 000 7.5h1A6.5 6.5 0 017.5 1V0z" fill="currentColor"></path>
+        </svg>
+        <h1 class="text-3xl text-white text-center mb-4 mt-1 font-bold">
+            My Products
+        </h1>
+    </div>
+
+    <a asp-controller="Product" asp-action="Create" class="text-white rounded flex flex-col px-3 justify-between items-center p-1 bg-white/30 bgorder-2 border border-opacity-50 backdrop-blur-sm shadow shadow-white/50 hover:text-teal-200 duration-300 transition">
+        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M7.5 1v13M1 7.5h13" stroke="currentColor"></path></svg>
+        Create
+    </a>
+</section>
+
+<div class="w-[60rem] h-[30rem] shadow shadow-white/50 relative top-[2.5rem] mx-auto bg-white/25 overflow-hidden border-[0.125rem] border-white border-opacity-50 rounded overflow-hidden">
+    <section class="backdrop-blur-sm w-full h-full flex flex-row justify-between items-center">
+
+        <!-- Title -->
+        <div class="w-[12rem] h-full rounded text-center flex flex-col justify-center items-center text-white">
+            
+        </div>
+
+        <div class="bg-gray-300 w-[47.5rem] h-full rounded-left p-1 flex flex-row justify-start items-start gap-2 flex-wrap overflow-y-auto">
+            @if (Model.Count() > 0)
+            {
+                @foreach (var item in Model)
+                {
+                    <div class="w-[15rem] h-[15.5rem] bg-white/25 border-[0.125rem] border-white border-opacity-50 rounded shadow shadow-white/50">
+                        <section class="backdrop-blur-lg">
+                            <div class="w-full h-[7.5rem]">
+                                <img src="@item.ImagePath" class="w-full h-full" />
+                            </div>
+                            <section class="flex flex-row justify-between items-center h-[8rem] p-1">
+                                
+                                <!-- Product Information --> 
+                                <div class="w-2/3 h-[7rem] text-left flex flex-col justify-start items-start">
+                                    <p class="text-2xl font-bold">@item.Name</p>
+                                    <p class="text-gray-600/80 w-full text-ellipsis overflow-hidden whitespace-nowrap">@item.Description</p>
+                                    <p class="text-gray-600/80 mb-1">$@item.Price</p>
+                                    <p class="rounded bg-teal-400 text-white bg-teal-400/50 backdrop-blur border-2 border-teal-400 border-opacity-20 px-3 shadow-lg shadow-teal-400/50">
+                                        @item.CategoryName
+                                    </p>
+                                </div>
+
+                                <!-- Links --> 
+                                <div class="w-1/3 flex flex-col justify-between items-center gap-2">
+                                    <a asp-controller="Product" asp-action="Update" asp-route-id="@item.Id" class="w-[95%] flex flex-col justify-between items-center rounded bg-teal-400 text-white bg-teal-400/50 backdrop-blur border-2 border-teal-400 border-opacity-20 px-3 shadow-lg shadow-teal-400/50">
+                                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M.5 10.5l-.354-.354-.146.147v.207h.5zm10-10l.354-.354a.5.5 0 00-.708 0L10.5.5zm4 4l.354.354a.5.5 0 000-.708L14.5 4.5zm-10 10v.5h.207l.147-.146L4.5 14.5zm-4 0H0a.5.5 0 00.5.5v-.5zm.354-3.646l10-10-.708-.708-10 10 .708.708zm9.292-10l4 4 .708-.708-4-4-.708.708zm4 3.292l-10 10 .708.708 10-10-.708-.708zM4.5 14h-4v1h4v-1zm-3.5.5v-4H0v4h1z" fill="currentColor"></path></svg>
+                                        Edit
+                                    </a>
+                                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"  class="w-[95%] flex flex-col justify-between items-center rounded bg-red-400 text-white bg-red-400/50 backdrop-blur border-2 border-red-400 border-opacity-20 px-3 shadow-lg shadow-red-400/50">
+                                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M4.5 3V1.5a1 1 0 011-1h4a1 1 0 011 1V3M0 3.5h15m-13.5 0v10a1 1 0 001 1h10a1 1 0 001-1v-10M7.5 7v5m-3-3v3m6-3v3" stroke="currentColor"></path></svg>
+                                        Delete
+                                    </a>
+                                </div>
+
+                            </section>
+                        </section>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="w-full h-full flex flex-row justify-center items-center text-3xl text-white">
+                    No products!
+                </div>
+            }
+        </div>
+
+    </section>
+</div>

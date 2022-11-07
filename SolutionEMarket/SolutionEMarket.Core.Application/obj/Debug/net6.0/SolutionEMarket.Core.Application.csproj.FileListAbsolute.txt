@@ -1,0 +1,15 @@
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\bin\Debug\net6.0\SolutionEMarket.Core.Application.deps.json
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\bin\Debug\net6.0\SolutionEMarket.Core.Application.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\bin\Debug\net6.0\SolutionEMarket.Core.Application.pdb
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\bin\Debug\net6.0\SolutionEMarket.Core.Domain.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\bin\Debug\net6.0\SolutionEMarket.Core.Domain.pdb
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.csproj.AssemblyReference.cache
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.AssemblyInfoInputs.cache
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.AssemblyInfo.cs
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.csproj.CoreCompileInputs.cache
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.csproj.CopyComplete
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\refint\SolutionEMarket.Core.Application.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\SolutionEMarket.Core.Application.pdb
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Application\obj\Debug\net6.0\ref\SolutionEMarket.Core.Application.dll

@@ -1,0 +1,15 @@
+﻿using SolutionEMarket.Core.Application.ViewModels.Product;
+using SolutionEMarket.Core.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SolutionEMarket.Core.Application.Interfaces.Repositories
+{
+    public interface IProductRepository : IGenericRepository<Product>
+    {
+        
+    }
+}

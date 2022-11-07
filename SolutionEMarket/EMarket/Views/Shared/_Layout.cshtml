@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using SolutionEMarket.Core.Application.Helpers;
+@using SolutionEMarket.Core.Application.ViewModels.User;
+@inject IHttpContextAccessor _httpAccessor;
+@{
+    UserViewModel uservm = _httpAccessor.HttpContext.Session.Get<UserViewModel>("user");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EMarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    @*
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/EMarket.styles.css" asp-append-version="true" />
+    *@
+</head>
+<body style="background: url(@Url.Content("~/resources/img/main-background.jpg"))">
+    <header>
+        <nav class="bg-white/20 ">
+            <div class="border-b-2 border-white border-opacity-30 px-2 py-2 backdrop-blur-sm flex flex-row justify-between items-center">
+                <a class="p-1 rounded bg-white" asp-area="" asp-controller="@(uservm != null ? "Home" : "User")" asp-action="Index">
+                    <img src="~/resources/icon/main-ico.png" width="60" height="60"/>
+                </a>
+                <div class="flex flex-row justify-evenly items-center">
+                    @if(uservm == null)
+                    {
+                        <a class="py-1 px-2 mx-1 text-sm text-white hover:text-teal-200 transition duration-300 flex flex-col justify-center items-center" asp-area="" asp-controller="User" asp-action="Index">
+                        <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M10.5 7.5l-3 3.25m3-3.25l-3-3m3 3H1m6-6h6.5v12H7" stroke="currentColor"></path></svg>
+                        Login
+                        </a>
+                        <a class="py-1 px-2 mx-1 text-sm text-white hover:text-teal-200 transition duration-300 flex flex-col justify-center items-center" asp-area="" asp-controller="User" asp-action="Register">
+                            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M10.5 14.49v.5h.5v-.5h-.5zm-10 0H0v.5h.5v-.5zm7-4.996v.5-.5zm-4 0v-.5.5zM8 3.498a2.499 2.499 0 01-2.5 2.498v1C7.433 6.996 9 5.43 9 3.498H8zM5.5 5.996A2.499 2.499 0 013 3.498H2a3.499 3.499 0 003.5 3.498v-1zM3 3.498A2.499 2.499 0 015.5 1V0A3.499 3.499 0 002 3.498h1zM5.5 1A2.5 2.5 0 018 3.498h1A3.499 3.499 0 005.5 0v1zm5 12.99H.5v1h10v-1zm-9.5.5v-1.996H0v1.996h1zm2.5-4.496h4v-1h-4v1zm6.5 2.5v1.996h1v-1.997h-1zm-2.5-2.5a2.5 2.5 0 012.5 2.5h1a3.5 3.5 0 00-3.5-3.5v1zm-6.5 2.5a2.5 2.5 0 012.5-2.5v-1a3.5 3.5 0 00-3.5 3.5h1zM12 5v5h1V5h-1zm-2 3h5V7h-5v1z" fill="currentColor"></path></svg>
+                            Register
+                        </a>
+                    } 
+                    else
+                    {
+                        <a class="py-1 px-2 mx-1 text-sm text-white hover:text-teal-200 transition duration-300 flex flex-col justify-center items-center" asp-area="" asp-controller="Product" asp-action="Index">
+                            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M.5.5l.6 2m0 0l2.4 8h11v-6a2 2 0 00-2-2H1.1zm11.4 12a1 1 0 110-2 1 1 0 010 2zm-8-1a1 1 0 112 0 1 1 0 01-2 0z" stroke="currentColor"></path></svg>
+                            My Product
+                        </a>
+                        <a class="py-1 px-2 mx-1 text-sm text-white hover:text-teal-200 transition duration-300 flex flex-col justify-center items-center" asp-area="" asp-controller="Category" asp-action="Index">
+                            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M.5 7.5l-.354-.354a.5.5 0 000 .708L.5 7.5zm7 7l-.354.354a.5.5 0 00.708 0L7.5 14.5zm7-7l.354.354A.5.5 0 0015 7.5h-.5zm-7-7V0a.5.5 0 00-.354.146L7.5.5zM.146 7.854l7 7 .708-.708-7-7-.708.708zm7.708 7l7-7-.708-.708-7 7 .708.708zM15 7.5v-6h-1v6h1zM13.5 0h-6v1h6V0zM7.146.146l-7 7 .708.708 7-7-.708-.708zM15 1.5A1.5 1.5 0 0013.5 0v1a.5.5 0 01.5.5h1zM10.5 5a.5.5 0 01-.5-.5H9A1.5 1.5 0 0010.5 6V5zm.5-.5a.5.5 0 01-.5.5v1A1.5 1.5 0 0012 4.5h-1zm-.5-.5a.5.5 0 01.5.5h1A1.5 1.5 0 0010.5 3v1zm0-1A1.5 1.5 0 009 4.5h1a.5.5 0 01.5-.5V3z" fill="currentColor"></path></svg>
+                            Category
+                        </a>
+                       <a class="py-1 px-2 mx-1 text-sm text-white hover:text-teal-200 transition duration-300 flex flex-col justify-center items-center" asp-area="" asp-controller="User" asp-action="LogOut">
+                            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M13.5 7.5l-3 3.25m3-3.25l-3-3m3 3H4m4 6H1.5v-12H8" stroke="currentColor"></path></svg>                            
+                            Log Out
+                       </a>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="w-full min-h-[84.2vh] h-auto">
+        <main class="w-full h-full">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-gray-800 p-3 flex-column flex-row justify-content-center item-center">
+        <div class="text-center text-white">
+            &copy; 2022 - EMarket - <a href="https://github.com/On3l7d15h">On3l7d15h</a>
+        </div>
+    </footer>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

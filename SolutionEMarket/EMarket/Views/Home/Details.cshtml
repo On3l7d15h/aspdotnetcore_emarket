@@ -1,0 +1,92 @@
+﻿@*Strong Typed*@
+@using SolutionEMarket.Core.Application.ViewModels.Product;
+@using SolutionEMarket.Core.Application.ViewModels.Category;
+@using SolutionEMarket.Core.Application.ViewModels.User;
+@model SaveProductViewModel
+@{
+    ViewData["Title"] = "Details Page";
+    SaveUserViewModel uservm = ViewBag.User;
+    SaveCategoryViewModel categoryvm = ViewBag.Categories; 
+}
+
+<section class="w-[60rem] mx-auto flex flex-row justify-between items-center relative top-[1.5rem] mt-[0.150rem]">
+        <div class="text-white h-auto flex flex-row justify-center items-center gap-2">
+            <h1 class="text-3xl text-white text-center mb-4 mt-1 font-bold">
+                Details
+            </h1>
+        </div>
+
+        <a asp-controller="Home" asp-action="Index" class="text-white rounded flex flex-col px-3 justify-between items-center p-1 bg-white/30 bgorder-2 border border-opacity-50 backdrop-blur-sm shadow shadow-white/50 hover:text-teal-200 duration-300 transition">
+            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M1.5 7.5l4-4m-4 4l4 4m-4-4H14" stroke="currentColor"></path></svg>
+            Back
+        </a>
+</section>
+
+<div class="w-[60rem] h-[30rem] shadow shadow-white/50 relative top-[2.5rem] mx-auto bg-white/25 overflow-hidden border-[0.125rem] border-white border-opacity-50 rounded overflow-hidden">
+    <section class="backdrop-blur-sm w-full h-full flex flex-row justify-between items-center">
+
+        <!-- Title -->
+        <div class="w-[30rem] h-full rounded text-center flex flex-col justify-center items-center text-white p-1">
+           <section class="w-full h-full flex snap-mandatory snap-x gap-5 flex-row justify-start items-center overflow-x-scroll overflow-y-hidden">
+               <img src="@Model.ImagePath1" class="rounded snap-center w-full h-full" />
+
+                @if (Model.ImagePath2 != "" && Model.ImagePath2 != null)
+                {
+                    <img src="@Model.ImagePath2" class="rounded snap-center w-full h-full"/>
+                }
+
+                @if (Model.ImagePath3 != "" && Model.ImagePath3 != null)
+                {
+                    <img src="@Model.ImagePath3" class="rounded snap-center w-full h-full"/>
+                }
+
+                @if (Model.ImagePath4 != "" && Model.ImagePath4 != null)
+                {
+                    <img src="@Model.ImagePath4" class="rounded snap-center w-full h-full"/>
+                }
+            </section>
+        </div>
+
+        <div class=" w-[30rem] h-full rounded-left p-2 flex flex-row justify-center items-start gap-2">
+            <div class="w-[30rem] h-[28.7rem] py-2 bg-white/25 border-[0.125rem] border-white border-opacity-50 rounded shadow shadow-white/50 flex flex-col justify-evenly items-center">
+                <section>
+                    <h1 class="px-2 text-3xl my-2 text-center text-white flex flex-row justify-between items-center">@Model.Name <small class="text-sm">@Model.Created</small></h1>
+                    <p class=" text-white/90 text-center">
+                        @Model.Description   
+                    </p>
+                </section>
+
+                <section class="w-5/6">
+                    <fieldset class="border-2 border-white border-opacity-50 rounded p-3 flex flex-row flex-wrap gap-2 justify-center items-start">
+                        <legend class="text-lg px-2 text-white"> Created For </legend>
+                        
+                        <p class="w-[8rem] flex flex-col justify-between items-center rounded bg-whitetext-white bg-white/50 backdrop-blur border-2 border-white border-opacity-20 px-3 shadow-lg shadow-white/50">
+                            User: <b>@uservm.Name</b>
+                        </p>
+
+                        <p class="w-[12rem] flex flex-col justify-between items-center rounded bg-whitetext-white bg-white/50 backdrop-blur border-2 border-white border-opacity-20 px-3 shadow-lg shadow-white/50">
+                            Phone: <b>@uservm.Phone</b>
+                        </p>
+
+                        <p class="w-[18rem] flex flex-col justify-between items-center rounded bg-whitetext-white bg-white/50 backdrop-blur border-2 border-white border-opacity-20 px-3 shadow-lg shadow-white/50">
+                            Email: <b>@uservm.Email</b>
+                        </p>
+
+                    </fieldset>
+                </section>
+
+                <section class="w-5/6">
+                    <fieldset class="border-2 border-white border-opacity-50 rounded p-3 flex flex-row flex-wrap gap-2 justify-center items-start">
+                        <legend class="text-lg px-2 text-white"> Product group </legend>
+                        <p class="w-[8rem] flex flex-col justify-between items-center rounded bg-whitetext-white bg-white/50 backdrop-blur border-2 border-white border-opacity-20 px-3 shadow-lg shadow-white/50">
+                            Price: <b>$@Model.Price</b>    
+                        </p>
+                        <p class="w-[10rem] flex flex-col justify-between items-center rounded bg-whitetext-white bg-white/50 backdrop-blur border-2 border-white border-opacity-20 px-3 shadow-lg shadow-white/50">
+                            Category: <b>@categoryvm.Name</b>    
+                        </p>
+                    </fieldset>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>

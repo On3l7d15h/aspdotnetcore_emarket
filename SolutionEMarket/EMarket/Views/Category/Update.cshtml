@@ -1,0 +1,54 @@
+﻿@* Strong Typed *@
+@using SolutionEMarket.Core.Application.ViewModels.Category;
+@model SaveCategoryViewModel;
+@{
+    ViewData["Title"] = "Update Category Page";
+}
+
+<div class="w-[22rem] shadow shadow-white/50 relative top-[9rem] mx-auto bg-white/25 overflow-hidden border-[0.125rem] border-white border-opacity-50 rounded">
+    <section class="backdrop-blur-sm">
+
+        <!-- Title -->
+        <div class="text-center flex flex-col justify-center items-center text-white mt-5">
+            <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                <path d="M3 13v.5h1V13H3zm8 0v.5h1V13h-1zm-7 0v-.5H3v.5h1zm2.5-3h2V9h-2v1zm4.5 2.5v.5h1v-.5h-1zM8.5 10a2.5 2.5 0 012.5 2.5h1A3.5 3.5 0 008.5 9v1zM4 12.5A2.5 2.5 0 016.5 10V9A3.5 3.5 0 003 12.5h1zM7.5 3A2.5 2.5 0 005 5.5h1A1.5 1.5 0 017.5 4V3zM10 5.5A2.5 2.5 0 007.5 3v1A1.5 1.5 0 019 5.5h1zM7.5 8A2.5 2.5 0 0010 5.5H9A1.5 1.5 0 017.5 7v1zm0-1A1.5 1.5 0 016 5.5H5A2.5 2.5 0 007.5 8V7zm0 7A6.5 6.5 0 011 7.5H0A7.5 7.5 0 007.5 15v-1zM14 7.5A6.5 6.5 0 017.5 14v1A7.5 7.5 0 0015 7.5h-1zM7.5 1A6.5 6.5 0 0114 7.5h1A7.5 7.5 0 007.5 0v1zm0-1A7.5 7.5 0 000 7.5h1A6.5 6.5 0 017.5 1V0z" fill="currentColor"></path>
+            </svg>
+            <h1 class="text-3xl text-white text-center mb-4 mt-1 font-bold">
+                Update Category
+            </h1>
+        </div>
+
+        <!-- Form -->
+        <section class="w-full mx-auto">
+            
+            <form method="post" asp-controller="Category" asp-action="Update" class="w-full flex flex-col justify-between items-center">
+
+                <!-- Name section -->
+                <div class="flex flex-col justify-center items-center my-2 text-left">
+                    <label asp-for="Name" class="text-white w-full">Name:</label>
+                    <input asp-for="Name" class="text-white p-2 outline-none bg-white/30 rounded" type="text"/>
+                </div>
+
+                <!-- Description Section -->
+                <div class="flex flex-col justify-center items-center my-2">
+                    <label asp-for="Description" class="text-white w-full">Password:</label>
+                    <textarea asp-for="Description">
+                    </textarea>
+                </div>
+
+                <!-- Buttons section -->
+                <div class="w-full flex flex-row mt-5">
+                    <button type="submit" class="w-[50%] py-2 px-3 bg-white/30 text-white hover:bg-white hover:text-teal-500 transition duration-300">
+                        Update It
+                    </button>
+                    <a asp-controller="Category" class="!w-[50%] text-center py-2 px-3 bg-white/30 text-white hover:bg-white hover:text-red-500 transition duration-300" asp-action="Index" >
+                        Go back
+                    </a>
+                </div>
+
+            </form>
+
+        </section>
+
+    </section>
+</div>

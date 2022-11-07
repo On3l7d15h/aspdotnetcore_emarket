@@ -1,0 +1,12 @@
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\bin\Debug\net6.0\SolutionEMarket.Core.Domain.deps.json
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\bin\Debug\net6.0\SolutionEMarket.Core.Domain.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\bin\Debug\net6.0\SolutionEMarket.Core.Domain.pdb
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.csproj.AssemblyReference.cache
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.AssemblyInfo.cs
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\refint\SolutionEMarket.Core.Domain.dll
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\SolutionEMarket.Core.Domain.pdb
+C:\Users\adm\source\repos\SolutionEMarket\SolutionEMarket.Core.Domain\obj\Debug\net6.0\ref\SolutionEMarket.Core.Domain.dll
