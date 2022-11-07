@@ -15,7 +15,7 @@ Yes it is, My DOTNET E-Market.
 ## 🖼 Screenshot / Capturas de Pantalla 🖼
 
 #### ✨ Login Screen / Pantalla Inicio sesión: ✨
-![Preview #1](https://i.ibb.co/kxY78J7/preview1.png)
+![Preview #1](https://i.ibb.co/NVFbw00/preview1.png)
 
 ---
 
